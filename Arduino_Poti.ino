@@ -2,7 +2,7 @@
 
 int Poti=A0;
 long depthNumb=0;
-//byte depthNumbByte;
+
  
 void setup() {
   
@@ -15,9 +15,8 @@ void setup() {
 
 void loop() {
   depthNumb=analogRead(Poti);
-  depthNumb=depthNumb*488,28;
+  depthNumb=depthNumb/4;
   Serial.println(depthNumb);
- // depthNumbByte=depthNumb;
   
   Wire.beginTransmission(8); 
   Wire.write(depthNumb);
